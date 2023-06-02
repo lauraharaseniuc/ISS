@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.lab7.model.Play"
+           table="Plays">
+        <id name="id" column="play_id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="name"
+                column="name"/>
+        <property
+                name="description"
+                column="description"/>
+        <property
+                name="author"
+                column="author"/>
+        <set name="representations" inverse="true" cascade="all">
+            <key column="play_id" not-null="true" />
+            <one-to-many class="com.example.lab7.model.Representation"/>
+        </set>
+    </class>
+</hibernate-mapping>

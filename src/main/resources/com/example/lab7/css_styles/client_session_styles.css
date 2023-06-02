@@ -1,0 +1,10 @@
+#errorLabel {
+    -fx-text-fill: red;
+    -fx-font-style: italic;
+}
+
+#currentPlayLabel {
+    -fx-text-fill: green;
+    -fx-font-style: italic;
+    -fx-font-size: 20px;
+}

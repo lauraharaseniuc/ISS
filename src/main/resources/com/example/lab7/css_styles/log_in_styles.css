@@ -1,0 +1,8 @@
+#logInButton {
+    -fx-background-color: #ff80d5;
+}
+
+#errorLabel {
+    -fx-text-fill: red;
+    -fx-font-style: italic;
+}

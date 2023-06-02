@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.lab7.model.Seat"
+           table="Seats">
+        <id name="id" column="seat_id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="zone"
+                column="zone"/>
+        <property
+                name="row"
+                column="row"/>
+        <property
+                name="seatNo"
+                column="no"/>
+        <set name="reservedSeats" inverse="true" cascade="all">
+            <key column="seat_id" not-null="true" />
+            <one-to-many class="com.example.lab7.model.ReservedSeat"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.lab7.model.Client"
+           table="Clients">
+        <id name="id" column="client_id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="username"
+                column="username"/>
+        <property
+                name="password"
+                column="password"/>
+        <set name="reservations" inverse="true" cascade="all">
+            <key column="client_id" not-null="true" />
+            <one-to-many class="com.example.lab7.model.Reservation"/>
+        </set>
+    </class>
+</hibernate-mapping>

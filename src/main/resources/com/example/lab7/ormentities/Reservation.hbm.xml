@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.lab7.model.Reservation"
+           table="Reservationsss">
+        <id name="id" column="reservation_id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="noOfSeats"
+                column="no_seats"/>
+        <property
+                name="firstName"
+                column="first_name"/>
+        <property
+                name="lastName"
+                column="last_name"/>
+        <property
+                name="phone"
+                column="phone"/>
+        <property
+                name="emailAddress"
+                column="email"/>
+        <many-to-one name="client" class="com.example.lab7.model.Client"
+                     column="client_id" not-null="true"/>
+        <many-to-one name="representation" class="com.example.lab7.model.Representation"
+                     column="representation_id" not-null="true"/>
+        <set name="reservedSeats" inverse="true" cascade="all">
+            <key column="reservation_id" not-null="true" />
+            <one-to-many class="com.example.lab7.model.ReservedSeat"/>
+        </set>
+    </class>
+</hibernate-mapping>

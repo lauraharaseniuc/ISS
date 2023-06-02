@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.lab7.model.Representation"
+           table="Representations">
+        <id name="id" column="representation_id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="startsAt"
+                column="start_time"/>
+        <property
+                name="date"
+                column="date"/>
+        <many-to-one name="play" class="com.example.lab7.model.Play"
+                     column="play_id" not-null="true"/>
+    </class>
+</hibernate-mapping>
