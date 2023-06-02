@@ -1,5 +1,4 @@
 # ISS
-ISS labs
 Diagrama cazurilor de utilizare - in LAB2+LAB4.mdj (UseCaseDiagram2) 
 
 Diagrama de clase cu entitati din domeniul solutiei in LAB2+LAB4.mdj (ClassDiagram2) - clasele cu metodele si dependentele
